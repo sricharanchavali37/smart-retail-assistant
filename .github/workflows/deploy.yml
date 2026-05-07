@@ -10,24 +10,22 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Set up Python 3.10
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: '3.10'
 
       - name: Install dependencies
-	run: |
+        run: |
           python -m pip install --upgrade pip
-          pip install fastapi==0.111.0 "uvicorn[standard]" python-multipart pydantic python-dotenv httpx pytest pytest-asyncio
+          pip install "fastapi==0.111.0" "uvicorn[standard]" python-multipart pydantic python-dotenv httpx pytest pytest-asyncio
           pip install xgboost scikit-learn pandas numpy joblib
-          pip install langchain langchain-openai langchain-community openai
+          pip install langchain==0.2.0 langchain-openai==0.1.7 langchain-community==0.2.0 openai==1.30.1
           pip install faiss-cpu sentence-transformers
           pip install azure-storage-blob azure-search-documents azure-core
           pip install "starlette==0.46.0"
-	
-        
 
       - name: Run Phase 1 ML training
         run: python backend/ml/run_phase1.py
@@ -40,16 +38,16 @@ jobs:
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Login to Docker Hub
-        uses: docker/login-action@v2
+        uses: docker/login-action@v3
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Build and push Docker image
-        uses: docker/build-push-action@v4
+        uses: docker/build-push-action@v5
         with:
           context: .
           push: true
