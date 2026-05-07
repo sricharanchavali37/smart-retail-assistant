@@ -1,0 +1,33 @@
+Beauty Category — Product Knowledge Base
+
+OVERVIEW
+The Beauty category covers skincare, cosmetics, personal care, and wellness products.
+Price range: Rs 25 to Rs 500 per unit.
+Average transaction value: Rs 390 per day across all beauty purchases.
+
+TOP PRODUCTS
+- Moisturisers and face serums (Rs 300–500): Premium segment, high margin
+- Lipsticks and makeup kits (Rs 50–100): High volume, frequent repurchase
+- Sunscreens and SPF products (Rs 25–50): Budget segment, consistent demand
+- Hair care products (Rs 25–300): Broad range, seasonal demand
+
+DEMAND PATTERNS
+- Peak months: February (Valentine's Day), October and November (festive season), December
+- Weekend sales are 15% higher than weekday sales on average
+- Female customers account for roughly 60% of Beauty purchases
+- Average customer age: 35 years
+
+ANOMALY INSIGHTS
+- 17 anomalous days detected in 2023 (highest single-day revenue: Rs 3,690)
+- Anomalies cluster in May and December — driven by promotional events
+- Z-score above 3.0 indicates a genuine demand spike worth investigating
+
+RESTOCKING GUIDANCE
+- Maintain 14-day safety stock for top 5 SKUs
+- Reorder point: when rolling 7-day average drops below 60% of monthly mean
+- Lead time from supplier: 3–5 business days
+
+RETURN POLICY
+- Beauty products are non-returnable once opened or seal is broken
+- Unopened products can be returned within 30 days with original receipt
+- Damaged products qualify for full replacement within 7 days of purchase

@@ -1,0 +1,42 @@
+Smart Retail Store — General Policies and Operations
+
+STORE OVERVIEW
+Smart Retail operates across Beauty, Clothing, and Electronics categories.
+Total transactions in 2023: 1,000
+Total revenue tracked: Rs 418,665 (annual)
+Average daily revenue per category: Rs 418
+
+PRICING POLICY
+- Price points: Rs 25, Rs 30, Rs 50, Rs 100, Rs 300, Rs 500
+- No dynamic pricing — fixed price per SKU
+- Seasonal discounts applied store-wide during festival months
+- Bulk purchase discount: 10% on orders above 4 units of same SKU
+
+CUSTOMER DEMOGRAPHICS
+- Age range: 18 to 64 years
+- Average customer age: 35.6 years
+- Gender split: approximately 52% female, 48% male
+- Top buying age group: 30–45 years
+
+ANOMALY ALERT POLICY
+- Anomaly score above 0.55: send alert to store manager
+- Anomaly score above 0.65: immediate stock audit triggered
+- Revenue z-score above 3.0: flag for pricing error review
+- Consecutive anomalies on same category: escalate to regional manager
+
+DEMAND FORECASTING POLICY
+- Forecasts generated daily using XGBoost model
+- Forecast horizon: up to 14 days ahead
+- Model retraining: monthly with latest transaction data
+- Acceptable MAPE threshold: under 15% for production use
+
+CUSTOMER SERVICE
+- Store hours: 9 AM to 9 PM, all days
+- Customer support: in-store and via online chat
+- Loyalty programme: 1 point per Rs 50 spent, redeemable after 500 points
+- Grievance resolution: within 48 hours for all complaints
+
+DATA PRIVACY
+- Customer transaction data retained for 3 years
+- No personal data shared with third parties without consent
+- All data processed under applicable privacy regulations

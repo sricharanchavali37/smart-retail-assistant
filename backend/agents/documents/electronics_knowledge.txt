@@ -1,0 +1,38 @@
+Electronics Category — Product Knowledge Base
+
+OVERVIEW
+The Electronics category covers gadgets, accessories, consumer electronics, and tech products.
+Price range: Rs 25 to Rs 500 per unit.
+Average transaction value: Rs 421 per day — highest average price point of all categories.
+Most volatile category: largest revenue swings and highest anomaly count.
+
+TOP PRODUCTS
+- Smartphones and accessories (Rs 300–500): High value, low volume
+- Earphones and audio devices (Rs 50–300): Mid segment, steady demand
+- Charging cables and adapters (Rs 25–50): High volume, low margin
+- Smartwatches and wearables (Rs 300–500): Growing segment
+
+DEMAND PATTERNS
+- Peak months: May, June (summer), December (gifting season)
+- Electronics had 30 anomalous days in 2023 — highest of all categories
+- Demand spikes strongly on weekends and during sales events
+- Average customer age: 38 years
+- Male customers account for roughly 55% of Electronics purchases
+
+ANOMALY INSIGHTS
+- Highest single-day revenue recorded: Rs 5,200 (June 24, 2023)
+- Anomaly z-score threshold: 4.0 for Electronics (higher baseline variance)
+- May 2023 had 5 anomalous days — likely a flash sale event
+- December anomalies driven by holiday gifting
+
+RESTOCKING GUIDANCE
+- Electronics inventory is high-value — avoid overstocking
+- Maintain 7-day safety stock for fast-moving accessories
+- Premium items (Rs 500): order-on-demand model recommended
+- Lead time from supplier: 5–10 business days for imported goods
+
+WARRANTY AND RETURN POLICY
+- Electronics must be unused and in original sealed packaging for return
+- Return window: 7 days from purchase date
+- Defective products: replacement within 14 days, no questions asked
+- No returns accepted for software-activated or registered devices

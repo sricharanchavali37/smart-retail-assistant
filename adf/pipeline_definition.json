@@ -1,0 +1,145 @@
+{
+    "name": "RetailDataPipeline",
+    "properties": {
+        "description": "Smart Retail Assistant - Bronze to Gold data pipeline",
+        "activities": [
+            {
+                "name": "CopyRawCSVToBlob",
+                "description": "Copy raw retail_sales.csv to bronze container",
+                "type": "Copy",
+                "dependsOn": [],
+                "policy": {
+                    "timeout": "0.12:00:00",
+                    "retry": 1,
+                    "retryIntervalInSeconds": 30
+                },
+                "typeProperties": {
+                    "source": {
+                        "type": "DelimitedTextSource",
+                        "storeSettings": {
+                            "type": "AzureBlobStorageReadSettings",
+                            "recursive": false
+                        },
+                        "formatSettings": {
+                            "type": "DelimitedTextReadSettings"
+                        }
+                    },
+                    "sink": {
+                        "type": "DelimitedTextSink",
+                        "storeSettings": {
+                            "type": "AzureBlobStorageWriteSettings"
+                        },
+                        "formatSettings": {
+                            "type": "DelimitedTextWriteSettings",
+                            "quoteAllText": true,
+                            "fileExtension": ".csv"
+                        }
+                    },
+                    "enableStaging": false
+                },
+                "inputs": [
+                    {
+                        "referenceName": "DS_BronzeRawCSV",
+                        "type": "DatasetReference"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "referenceName": "DS_BronzeOutput",
+                        "type": "DatasetReference"
+                    }
+                ]
+            },
+            {
+                "name": "RunBronzeToSilver",
+                "description": "Trigger Databricks notebook: bronze to silver transformation",
+                "type": "DatabricksNotebook",
+                "dependsOn": [
+                    {
+                        "activity": "CopyRawCSVToBlob",
+                        "dependencyConditions": ["Succeeded"]
+                    }
+                ],
+                "policy": {
+                    "timeout": "0.12:00:00",
+                    "retry": 1,
+                    "retryIntervalInSeconds": 60
+                },
+                "typeProperties": {
+                    "notebookPath": "/Shared/SmartRetail/01_bronze_to_silver",
+                    "baseParameters": {
+                        "pipeline_run_id": {
+                            "value": "@pipeline().RunId",
+                            "type": "Expression"
+                        },
+                        "run_date": {
+                            "value": "@formatDateTime(utcnow(), 'yyyy-MM-dd')",
+                            "type": "Expression"
+                        }
+                    }
+                },
+                "linkedServiceName": {
+                    "referenceName": "LS_AzureDatabricks",
+                    "type": "LinkedServiceReference"
+                }
+            },
+            {
+                "name": "RunSilverToGold",
+                "description": "Trigger Databricks notebook: silver to gold aggregations",
+                "type": "DatabricksNotebook",
+                "dependsOn": [
+                    {
+                        "activity": "RunBronzeToSilver",
+                        "dependencyConditions": ["Succeeded"]
+                    }
+                ],
+                "policy": {
+                    "timeout": "0.12:00:00",
+                    "retry": 1,
+                    "retryIntervalInSeconds": 60
+                },
+                "typeProperties": {
+                    "notebookPath": "/Shared/SmartRetail/02_silver_to_gold",
+                    "baseParameters": {
+                        "pipeline_run_id": {
+                            "value": "@pipeline().RunId",
+                            "type": "Expression"
+                        }
+                    }
+                },
+                "linkedServiceName": {
+                    "referenceName": "LS_AzureDatabricks",
+                    "type": "LinkedServiceReference"
+                }
+            },
+            {
+                "name": "NotifySuccess",
+                "description": "Log pipeline completion",
+                "type": "SetVariable",
+                "dependsOn": [
+                    {
+                        "activity": "RunSilverToGold",
+                        "dependencyConditions": ["Succeeded"]
+                    }
+                ],
+                "typeProperties": {
+                    "variableName": "pipeline_status",
+                    "value": "SUCCESS"
+                }
+            }
+        ],
+        "variables": {
+            "pipeline_status": {
+                "type": "String",
+                "defaultValue": "RUNNING"
+            }
+        },
+        "annotations": [
+            "SmartRetail",
+            "DataPipeline",
+            "MedallionArchitecture"
+        ],
+        "lastPublishTime": "2024-01-01T00:00:00Z"
+    },
+    "type": "Microsoft.DataFactory/factories/pipelines"
+}

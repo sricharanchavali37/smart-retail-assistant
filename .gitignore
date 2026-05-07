@@ -1,0 +1,12 @@
+venv/
+__pycache__/
+*.pyc
+.env
+*.pkl
+*.log
+retail_api.log
+backend/agents/faiss_index/
+data/raw/
+data/processed/
+backend/models/
+.pytest_cache/

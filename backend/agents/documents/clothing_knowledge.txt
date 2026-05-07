@@ -1,0 +1,37 @@
+Clothing Category — Product Knowledge Base
+
+OVERVIEW
+The Clothing category covers apparel, fashion accessories, and seasonal wear.
+Price range: Rs 25 to Rs 500 per unit.
+Average transaction value: Rs 428 per day — most consistent performer across the year.
+Most stable category: lowest anomaly count (only 6 anomalous days in 2023).
+
+TOP PRODUCTS
+- Casual wear and t-shirts (Rs 25–50): High volume, budget segment
+- Formal shirts and trousers (Rs 300–500): Premium segment, lower frequency
+- Seasonal clothing — jackets, kurtas (Rs 50–300): Strong seasonal spikes
+- Accessories — belts, scarves (Rs 25–50): Impulse purchases, high attach rate
+
+DEMAND PATTERNS
+- Steady demand year-round with mild seasonal variation
+- Peak months: October, November, December (festive and wedding season)
+- Weekend sales slightly higher than weekday (10% average premium)
+- Average customer age: 36 years
+- Gender split: roughly equal male and female customers
+
+ANOMALY INSIGHTS
+- Only 6 anomalous days detected in 2023 — most predictable category
+- Anomalies are usually tied to flash sales or festival promotions
+- Rolling 7-day mean is the most reliable forecast baseline for Clothing
+
+RESTOCKING GUIDANCE
+- Clothing has longer shelf life — maintain 21-day safety stock
+- Size distribution: stock S:M:L:XL in ratio 1:3:3:2 for adult apparel
+- Seasonal items: order 8 weeks in advance for festival season
+- Lead time: 3–7 business days for domestic suppliers
+
+RETURN POLICY
+- Clothing can be returned within 30 days if tags are intact and unworn
+- Sale items: exchange only, no cash refund
+- Washed or altered items cannot be returned
+- Size exchanges are free within 15 days of purchase
