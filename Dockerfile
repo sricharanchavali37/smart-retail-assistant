@@ -29,7 +29,7 @@ COPY data/raw/ ./data/raw/
 COPY scripts/ ./scripts/
 COPY notebooks/ ./notebooks/
 COPY adf/ ./adf/
-COPY .env .env
+
 
 # Run Phase 1 to generate ML models and processed data
 RUN python backend/ml/run_phase1.py
