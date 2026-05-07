@@ -18,11 +18,16 @@ jobs:
           python-version: '3.10'
 
       - name: Install dependencies
-        run: |
+	run: |
           python -m pip install --upgrade pip
-          pip install fastapi uvicorn pytest pytest-asyncio httpx
+          pip install fastapi==0.111.0 "uvicorn[standard]" python-multipart pydantic python-dotenv httpx pytest pytest-asyncio
           pip install xgboost scikit-learn pandas numpy joblib
-          pip install python-dotenv python-multipart pydantic
+          pip install langchain langchain-openai langchain-community openai
+          pip install faiss-cpu sentence-transformers
+          pip install azure-storage-blob azure-search-documents azure-core
+          pip install "starlette==0.46.0"
+	
+        
 
       - name: Run Phase 1 ML training
         run: python backend/ml/run_phase1.py

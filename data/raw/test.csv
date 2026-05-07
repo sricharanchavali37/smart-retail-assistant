@@ -1,0 +1,3 @@
+Transaction ID,Date,Customer ID,Gender,Age,Product Category,Quantity,Price per Unit,Total Amount
+T001,2023-06-15,C001,Female,28,Beauty,2,50,100
+T002,2023-06-16,C002,Male,35,Electronics,1,300,300
